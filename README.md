@@ -3,7 +3,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=jaafar-harabi" alt="jaafar-harabi" /></a> </p>
 
-- 👨‍💻 All of my projects are available at [https://jaafardev.me](https://jaafardev.me)
+- 👨‍💻 All of my projects are available at [https://jaafardev.me](https://jaafardev.tech)
 
 - 📫 How to reach me **jaafar.harabi@enig.u-gabes.tn**
 
