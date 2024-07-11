@@ -3,9 +3,9 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=jaafar-harabi" alt="jaafar-harabi" /></a> </p>
 
-- 👨‍💻 All of my projects are available at **https://jaafardev.netlify.app**
+- 👨‍💻 Some of my projects are available at **https://jaafardev.netlify.app**
 
-- 📫 How to reach me **jaafar.harabi@enig.u-gabes.tn**
+- 📫 How to reach me **Hjaafar@daytruck.tn**
 
 
 <h3 align="left">Connect with me:</h3>
