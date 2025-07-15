@@ -59,10 +59,9 @@
 
 ## 📊 **GitHub Stats**
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jaafar-harabi&theme=dark&include_all_commits=true&count_private=true&hide_border=true" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=jaafar-harabi&theme=dark&hide_border=true" width="48%" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jaafar-harabi&layout=compact&theme=dark&hide_border=true&count_private=true" width="60%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=jaafar-harabi&theme=dark&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=jaafar-harabi&theme=dark&hide_border=false" alt="GitHub Streak Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jaafar-harabi&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages"/>
 </p>
 
 
