@@ -80,20 +80,6 @@
 
 ---
 
-## 🗂️ Featured Projects
-> Pin these for strong visibility on your profile.
-
-- **parc** — Invoice system with search, title management, and document handling  
-  <sub><em>Stack:</em> Next.js, Node.js, Cloud, CI/CD</sub>
-
-- **skills-secure-repository-supply-chain** — Secure your Repository Supply Chain  
-  <sub><em>Focus:</em> Supply Chain Security, Policy Enforcement, CI/CD Security</sub>
-
-- **kubelabs / Fast-Kubernetes** — Kubernetes labs: Deployments, Services, Helm, Ingress, etc.  
-  <sub><em>Purpose:</em> Hands-on learning for Kubernetes practitioners</sub>
-
----
-
 ## 🥇 Certifications
 - 🧩 **Oracle Cloud Infrastructure 2025 Certified DevOps Professional**  
 - ☁️ **AWS Certified Solutions Architect – Associate**  
@@ -114,14 +100,6 @@
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=jaafar-harabi&theme=gruvbox&no-frame=true&margin-w=5&margin-h=5" alt="GitHub Profile Trophies"/>
 </p>
-
----
-
-## 📌 Recent Highlights
-- ✅ Integrated Trivy & SonarQube for automated CI/CD security scans.  
-- ⚙️ Built hybrid infrastructure combining on-prem servers & AWS cloud.  
-- 🔭 Implemented observability stack with CloudWatch, Prometheus, and Grafana.  
-- 🚀 Supported the **Day Truck** launch across multiple regions.  
 
 ---
 
