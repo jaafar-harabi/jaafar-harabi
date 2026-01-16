@@ -99,15 +99,15 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 ## 📊 GitHub Activity & Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jaafar-harabi&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&cache_seconds=1800&v=2" />
+  <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=jaafar-harabi&show_icons=true&theme=github_dark&hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=jaafar-harabi&theme=github-dark&hide_border=true&v=2" />
+  <img src="https://streak-stats.demolab.com?user=jaafar-harabi&theme=github-dark&hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jaafar-harabi&layout=compact&theme=github_dark&hide_border=true&v=2" />
+  <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=jaafar-harabi&layout=compact&theme=github_dark&hide_border=true" />
 </p>
 
 ---
