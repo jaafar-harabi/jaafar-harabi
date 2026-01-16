@@ -1,130 +1,134 @@
 <p align="left">
-  <img src="https://komarev.com/ghpvc/?username=jaafar-harabi&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views"/>
+  <img src="https://komarev.com/ghpvc/?username=jaafar-harabi&label=Profile%20views&color=0e75b6&style=flat" />
 </p>
 
-<h1 align="center">🚀 Welcome to My DevOps & Cloud-Native Space!</h1>
-<h2 align="center">Hey, I'm <strong>Jaafar Harabi</strong> 👨‍💻</h2>
+<h1 align="center">Jaafar Harabi — DevOps | Cloud | Platform | SRE Engineer</h1>
 
 <p align="center">
-  <em>DevOps Engineer • Cloud Architect • Platform & Full-Stack Developer</em><br/>
-  I build <strong>secure, automated, and scalable</strong> infrastructures using cloud-native and DevSecOps practices.
+  <strong>DevOps Engineer • Cloud Architect • Platform & Site Reliability Engineer</strong><br/>
+  Designing <strong>secure, automated, scalable, and observable</strong> cloud-native platforms.
 </p>
 
 <p align="center">
   <a href="mailto:harabi.jaafar@gmail.com">
-    <img src="https://img.shields.io/badge/Email-me-red?style=for-the-badge&logo=gmail" alt="Email Badge"/>
+    <img src="https://img.shields.io/badge/Email-contact-red?style=for-the-badge&logo=gmail"/>
   </a>
-  <a href="https://linkedin.com/in/jaafar-harabi" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn Badge"/>
+  <a href="https://linkedin.com/in/jaafar-harabi">
+    <img src="https://img.shields.io/badge/LinkedIn-profile-blue?style=for-the-badge&logo=linkedin"/>
   </a>
-  <a href="https://medium.com/@jaafar-harabi" target="_blank">
-    <img src="https://img.shields.io/badge/Medium-read-%2312100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium Badge"/>
-  </a>
-  <a href="https://stackoverflow.com/users/21530922" target="_blank">
-    <img src="https://img.shields.io/badge/Stack_Overflow-ask-%23FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white" alt="Stack Overflow Badge"/>
-  </a>
-  <a href="https://x.com/Jaafar_harabiii" target="_blank">
-    <img src="https://img.shields.io/badge/X-follow-000000?style=for-the-badge&logo=x" alt="X/Twitter Badge"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/jaafar-harabi?tab=followers">
-    <img src="https://img.shields.io/github/followers/jaafar-harabi?label=Followers&style=flat-square" alt="Followers"/>
-  </a>
-  <a href="https://github.com/jaafar-harabi?tab=stars">
-    <img src="https://img.shields.io/github/stars/jaafar-harabi?label=Stars&style=flat-square" alt="Stars"/>
+  <a href="https://github.com/jaafar-harabi">
+    <img src="https://img.shields.io/badge/GitHub-jaafar--harabi-black?style=for-the-badge&logo=github"/>
   </a>
 </p>
 
 ---
 
-## 🏆 About Me
-- 💼 **Cloud & DevOps Engineer @ Day Truck** — designing hybrid infrastructure (on-prem + AWS) and managing GitOps automation.
-- 🚀 **Cloud-Native & IaC**: Kubernetes • Helm • ArgoCD • Terraform • AWS
-- 🔧 **CI/CD & Automation**: GitHub Actions • Jenkins • GitOps • SonarQube • Trivy
-- 🛡️ **Security & Compliance**: Vault • AWS Secrets Manager • IAM • WAF • Trivy
-- 📈 **Observability**: Prometheus • Grafana • ELK Stack • CloudWatch • Slack alerts
-- 🎯 **Goal**: Automate infrastructure, secure pipelines, and scale platforms efficiently.
+## 👋 About Me
+
+DevOps / Cloud / Platform Engineer with **2+ years of hands-on experience** designing and operating **production-grade infrastructures** using **AWS, Kubernetes, Terraform, and GitOps**.
+
+I specialize in:
+- Cloud-native platform engineering
+- CI/CD & DevSecOps automation
+- Kubernetes operations & reliability
+- Infrastructure as Code & GitOps
+- Observability, monitoring & cost optimization
+
+Currently working as **Cloud & DevOps Engineer @ Day Truck**, building **hybrid infrastructure (AWS + on-prem)** and managing **mission-critical Kubernetes workloads**.
 
 ---
 
-## ⚙️ Tech Stack
+## 🧠 Core Expertise (SEO Optimized)
 
-### ☁️ Cloud & DevOps
-![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-%23EB5E28.svg?style=for-the-badge&logo=argo&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-![Jenkins](https://img.shields.io/badge/Jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-%23007EC6.svg?style=for-the-badge&logo=helm&logoColor=white)
+**Cloud Platforms**
+- AWS (EC2, VPC, EKS, IAM, S3, ECR, CloudWatch)
+- Azure • GCP • OVHcloud (working knowledge)
 
-### 🔒 Security & Monitoring
-![Vault](https://img.shields.io/badge/HashiCorp%20Vault-%23000000.svg?style=for-the-badge&logo=vault&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-%23E6522C.svg?style=for-the-badge&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)
-![ELK](https://img.shields.io/badge/ELK-%23000000.svg?style=for-the-badge&logo=elastic-stack&logoColor=white)
-![Trivy](https://img.shields.io/badge/Trivy-%232E9AFE.svg?style=for-the-badge&logo=aqua&logoColor=white)
-![SonarQube](https://img.shields.io/badge/SonarQube-%232E9AFE.svg?style=for-the-badge&logo=sonarqube&logoColor=white)
+**Containers & Orchestration**
+- Docker • Kubernetes • Helm • ArgoCD
+- Kubernetes security & operations (prod clusters)
+
+**Infrastructure as Code**
+- Terraform • Ansible
+- Modular, reusable, version-controlled IaC
+
+**CI/CD & DevSecOps**
+- GitHub Actions • Jenkins • GitLab CI/CD
+- SonarQube (SAST) • Trivy (SCA)
+- OWASP ZAP (DAST)
+
+**Security & Secrets**
+- HashiCorp Vault
+- AWS Secrets Manager
+- IAM, least privilege, policy-as-code
+
+**Observability & Reliability**
+- Prometheus • Grafana • ELK Stack
+- AWS CloudWatch & alerts
+- Logging, metrics, alerting, SLO awareness
 
 ---
 
-## 🧩 How I Work
-- **Infrastructure as Code (IaC)** — everything is version-controlled and reproducible.  
-- **GitOps Pipelines** — declarative deployments with progressive delivery.  
-- **Shift-Left Security** — integrated vulnerability & IaC scanning.  
-- **Observability-as-Code** — dashboards, alerts, and SLOs under version control.  
-- **Cost Optimization** — autoscaling, right-sizing, and resource governance.
+## ⚙️ How I Build Platforms
+
+- **Infrastructure as Code** — reproducible, auditable, scalable
+- **GitOps** — declarative deployments with ArgoCD
+- **Shift-Left Security** — security integrated into CI/CD
+- **Reliability-Driven Design** — monitoring, alerting, failure handling
+- **Cost Optimization** — right-sizing, autoscaling, governance
+
+---
+
+## 🏗️ Selected Projects (Cloud / DevOps)
+
+- **aws-terraform-infra-blueprint**  
+  Production-ready AWS blueprint (VPC, EKS, RDS, S3, IAM) with CI/CD automation
+
+- **secure-task-api-devsecops**  
+  Secure Node.js / TypeScript API with Docker, PostgreSQL, and full DevSecOps pipeline
+
+- **springboot-react-microservices-devsecops-demo**  
+  Microservices architecture with Kubernetes, CI/CD, security scanning, and monitoring
 
 ---
 
 ## 🥇 Certifications
-- 🧩 **Oracle Cloud Infrastructure 2025 Certified DevOps Professional**  
-- ☁️ **AWS Certified Solutions Architect – Associate**  
-- 🔐 **ISO/IEC 27001:2022 Lead Auditor**  
-- 🧑‍💻 **Meta Full-Stack Engineer**  
 
-<sub>Badges available on LinkedIn and Credly profiles.</sub>
-
----
-
-## 📊 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jaafar-harabi&theme=dark&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=jaafar-harabi&theme=dark&hide_border=false" alt="GitHub Streak Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jaafar-harabi&theme=dark&hide_border=false&layout=compact" alt="Top Languages"/>
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=jaafar-harabi&theme=gruvbox&no-frame=true&margin-w=5&margin-h=5" alt="GitHub Profile Trophies"/>
-</p>
+- ☁️ **AWS Certified Solutions Architect – Associate (SAA-C03)**
+- 🧩 **Oracle Cloud Infrastructure DevOps Professional**
+- 🔐 **ISO/IEC 27001:2022 Lead Auditor**
+- 🧑‍💻 **Meta Full-Stack Engineer**
+- ☁️ **Microsoft Azure Fundamentals (AZ-900)**
+- 🔐 **Google Cybersecurity**
+- 🧠 **GitHub Foundations**
 
 ---
 
-## 🤝 Open to
+## 📊 GitHub Activity & Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=jaafar-harabi&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true"/>
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=jaafar-harabi&theme=github-dark&hide_border=true"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jaafar-harabi&layout=compact&theme=github_dark&hide_border=true"/>
+</p>
+
+---
+
+## 🤝 Open to Opportunities
+
 - DevOps Engineering  
 - Cloud Engineering  
 - Platform Engineering  
-- Full-Stack Development  
-- Open-Source Collaboration  
+- Site Reliability Engineering (SRE)  
+- Cloud-Native & DevSecOps Platforms  
 
 ---
 
-## 📫 Let’s Connect
-<p align="center">
-  <a href="https://linkedin.com/in/jaafar-harabi" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn Badge"/>
-  </a>
-  <a href="https://medium.com/@jaafar-harabi" target="_blank">
-    <img src="https://img.shields.io/badge/Medium-read-%2312100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium Badge"/>
-  </a>
-  <a href="mailto:jaafar.harabi@gmail.com">
-    <img src="https://img.shields.io/badge/Email-me-red?style=for-the-badge&logo=gmail" alt="Email Badge"/>
-  </a>
-</p>
-
----
-
-### 🌟 “Automation is the key to scalability. Security is the key to stability.” 🚀
+### 🚀 Philosophy
+> **Automation enables scale. Reliability builds trust. Security protects everything.**
