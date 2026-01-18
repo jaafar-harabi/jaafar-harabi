@@ -29,7 +29,6 @@ jobs:
           GH_USER: jaafar-harabi
         run: |
           python scripts/generate_stats_svg.py
-          python scripts/generate_impact_all_time_svg.py
           python scripts/generate_tech_stack_svg.py
           python scripts/generate_highlights_svg.py
 
