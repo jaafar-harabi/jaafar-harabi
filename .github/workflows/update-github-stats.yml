@@ -23,11 +23,15 @@ jobs:
       - name: Install deps
         run: python -m pip install --upgrade pip requests
 
-      - name: Generate SVG
+      - name: Generate SVGs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: jaafar-harabi
-        run: python scripts/generate_stats_svg.py
+        run: |
+          python scripts/generate_stats_svg.py
+          python scripts/generate_impact_all_time_svg.py
+          python scripts/generate_tech_stack_svg.py
+          python scripts/generate_highlights_svg.py
 
       - name: Commit & push if changed
         run: |
