@@ -38,8 +38,6 @@ def paginate(url, params=None):
         page += 1
     return items
 
-# DevOps/Cloud tool detection rules
-# (pattern -> canonical tool name)
 TOOL_MAP = {
     r"\bterraform\b|\bhcl\b": "Terraform",
     r"\bterragrunt\b": "Terragrunt",
@@ -48,89 +46,73 @@ TOOL_MAP = {
     r"\bargocd\b|\bargo\s*cd\b": "ArgoCD",
     r"\bflux\b|\bfluxcd\b": "FluxCD",
     r"\bdocker\b": "Docker",
-    r"\bcontainerd\b": "containerd",
     r"\baws\b|\bec2\b|\bvpc\b|\beks\b|\becr\b|\bs3\b|\biam\b|\bcloudwatch\b": "AWS",
-    r"\bazure\b|\baz-900\b": "Azure",
+    r"\bazure\b": "Azure",
     r"\bgcp\b": "GCP",
     r"\bgithub\s*actions\b|\bgha\b": "GitHub Actions",
     r"\bjenkins\b": "Jenkins",
-    r"\bgitlab\s*ci\b": "GitLab CI",
     r"\bansible\b": "Ansible",
-    r"\bpacker\b": "Packer",
-    r"\bvault\b|\bhashicorp\s*vault\b": "Vault",
-    r"\bsecrets\s*manager\b|\bparameter\s*store\b": "Secrets Manager / SSM",
     r"\bprometheus\b": "Prometheus",
     r"\bgrafana\b": "Grafana",
     r"\belk\b|\belasticsearch\b|\blogstash\b|\bkibana\b": "ELK",
     r"\bopentelemetry\b|\botel\b": "OpenTelemetry",
-    r"\bdatadog\b": "Datadog",
-    r"\bnew\s*relic\b": "New Relic",
-    r"\bsonarqube\b": "SonarQube",
+    r"\bvault\b": "Vault",
     r"\btrivy\b": "Trivy",
-    r"\bsnyk\b": "Snyk",
-    r"\bowasp\b|\bzap\b": "OWASP ZAP",
-    r"\bterraform\s*cloud\b|\btfe\b": "Terraform Cloud",
-    r"\bistio\b": "Istio",
-    r"\blinkerd\b": "Linkerd",
-    r"\bnginx\b|\bingress\b": "Ingress / NGINX",
-    r"\bpostgres\b|\bpostgresql\b": "PostgreSQL",
-    r"\brds\b": "AWS RDS",
-    r"\brabbitmq\b": "RabbitMQ",
-    r"\bkafka\b": "Kafka",
+    r"\bsonarqube\b": "SonarQube",
 }
 
-def detect_tools(text: str, counter: Counter):
+def detect(text: str, counter: Counter):
     t = (text or "").lower()
     for pattern, name in TOOL_MAP.items():
         if re.search(pattern, t):
             counter[name] += 1
 
 repos = paginate(f"https://api.github.com/users/{GH_USER}/repos", params={"sort": "updated"})
-
-tool_counter = Counter()
+counter = Counter()
 
 for repo in repos:
     if repo.get("fork"):
         continue
+    detect(repo.get("name", ""), counter)
+    detect(repo.get("description", ""), counter)
+    for topic in (repo.get("topics", []) or []):
+        detect(topic, counter)
 
-    # name + description
-    detect_tools(repo.get("name", ""), tool_counter)
-    detect_tools(repo.get("description", ""), tool_counter)
+top = [k for k, _ in counter.most_common(10)]
+if not top:
+    top = ["Terraform", "Kubernetes", "AWS", "GitHub Actions", "Helm", "ArgoCD", "Prometheus", "Grafana"]
 
-    # topics
-    topics = repo.get("topics", []) or []
-    for topic in topics:
-        detect_tools(topic, tool_counter)
+primary = " · ".join(top[:8])
+secondary = " · ".join(top[8:10]) if len(top) > 8 else ""
 
-# If detection finds nothing (rare), show a default
-if not tool_counter:
-    top_tools = ["Terraform", "Kubernetes", "AWS", "GitHub Actions", "Prometheus", "Grafana"]
-    also_used = []
-else:
-    top_tools = [k for k, _ in tool_counter.most_common(8)]
-    also_used = [k for k, _ in tool_counter.most_common(14)][8:14]
+title = xml_escape("🧰 DevOps / Cloud Tech Focus")
+subtitle = xml_escape("Detected from repository topics and descriptions")
 
-top_line = " · ".join(top_tools)
-also_line = " · ".join(also_used) if also_used else ""
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role="img" aria-label="DevOps cloud tools">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
 
-title = xml_escape("DevOps and Cloud Technology Focus")
+  <rect width="860" height="190" rx="18" fill="url(#bg2)" stroke="#30363d"/>
+  <text x="34" y="52" fill="#c9d1d9" font-size="24" font-family="Verdana">{title}</text>
+  <text x="34" y="78" fill="#8b949e" font-size="13" font-family="Verdana">{subtitle}</text>
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="185" role="img" aria-label="DevOps and Cloud tech stack">
-  <rect width="860" height="185" rx="16" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">{title}</text>
+  <rect x="34" y="96" width="792" height="68" rx="14" fill="#0b0f14" stroke="#21262d"/>
 
-  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Primary tools:</text>
-  <text x="160" y="92" fill="#3fb950" font-size="16" font-family="Verdana">{xml_escape(top_line)}</text>
+  <text x="56" y="124" fill="#3fb950" font-size="16" font-family="Verdana">Primary:</text>
+  <text x="140" y="124" fill="#c9d1d9" font-size="16" font-family="Verdana">{xml_escape(primary)}</text>
 """
 
-if also_line:
+if secondary:
     svg += f"""
-  <text x="30" y="128" fill="#c9d1d9" font-size="16" font-family="Verdana">Also used:</text>
-  <text x="130" y="128" fill="#58a6ff" font-size="16" font-family="Verdana">{xml_escape(also_line)}</text>
+  <text x="56" y="150" fill="#58a6ff" font-size="16" font-family="Verdana">Also:</text>
+  <text x="120" y="150" fill="#c9d1d9" font-size="16" font-family="Verdana">{xml_escape(secondary)}</text>
 """
 
 svg += """
-  <text x="30" y="165" fill="#8b949e" font-size="12" font-family="Verdana">Derived from repository topics, names, and descriptions</text>
 </svg>
 """
 
