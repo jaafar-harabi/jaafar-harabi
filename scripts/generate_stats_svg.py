@@ -128,7 +128,7 @@ updated = xml_escape(dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"))
 title = xml_escape("🚀 GitHub Activity")
 sub = xml_escape("All-time contributions with streak signals")
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role="img" aria-label="GitHub activity">
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="210" role="img" aria-label="GitHub activity">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -136,22 +136,28 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role=
     </linearGradient>
   </defs>
 
-  <rect width="860" height="190" rx="18" fill="url(#bg)" stroke="#30363d"/>
+  <rect width="860" height="210" rx="18" fill="url(#bg)" stroke="#30363d"/>
   <text x="34" y="52" fill="#c9d1d9" font-size="24" font-family="Verdana">{title}</text>
   <text x="34" y="78" fill="#8b949e" font-size="13" font-family="Verdana">{sub}</text>
 
-  <rect x="34" y="96" width="792" height="68" rx="14" fill="#0b0f14" stroke="#21262d"/>
+  <!-- Three mini-cards -->
+  <rect x="34"  y="96" width="250" height="78" rx="14" fill="#0b0f14" stroke="#21262d"/>
+  <rect x="305" y="96" width="250" height="78" rx="14" fill="#0b0f14" stroke="#21262d"/>
+  <rect x="576" y="96" width="250" height="78" rx="14" fill="#0b0f14" stroke="#21262d"/>
 
-  <text x="56" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">✨ Total (all-time)</text>
-  <text x="220" y="124" fill="#58a6ff" font-size="18" font-family="Verdana">{total_all_time}</text>
+  <!-- Total -->
+  <text x="54" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">✨ Total (all-time)</text>
+  <text x="54" y="152" fill="#58a6ff" font-size="22" font-family="Verdana">{total_all_time}</text>
 
-  <text x="370" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🔥 Current streak</text>
-  <text x="530" y="124" fill="#3fb950" font-size="18" font-family="Verdana">{cur} days</text>
+  <!-- Current streak -->
+  <text x="325" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">🔥 Current streak</text>
+  <text x="325" y="152" fill="#3fb950" font-size="22" font-family="Verdana">{cur} days</text>
 
-  <text x="620" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest streak</text>
-  <text x="790" y="124" fill="#f78166" font-size="18" font-family="Verdana" text-anchor="end">{longest} days</text>
+  <!-- Longest -->
+  <text x="596" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest streak</text>
+  <text x="596" y="152" fill="#f78166" font-size="22" font-family="Verdana">{longest} days</text>
 
-  <text x="34" y="178" fill="#8b949e" font-size="12" font-family="Verdana">Updated: {updated}</text>
+  <text x="34" y="198" fill="#8b949e" font-size="12" font-family="Verdana">Updated: {updated}</text>
 </svg>
 """
 
