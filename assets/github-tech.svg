@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" role="img" aria-label="Tech stack">
-  <rect width="860" height="160" rx="16" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">Top Technologies</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="180" role="img" aria-label="Cloud DevOps tech stack">
+  <rect width="860" height="180" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">Cloud and DevOps Tech Stack</text>
 
-  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Java 19% · Astro 18% · PHP 13% · JavaScript 12% · Python 11% · TypeScript 6%</text>
+  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Top languages:</text>
+  <text x="170" y="92" fill="#58a6ff" font-size="16" font-family="Verdana">Java · Astro · PHP</text>
 
-  <text x="30" y="132" fill="#8b949e" font-size="12" font-family="Verdana">Based on language bytes across non-fork repos</text>
+  <text x="30" y="130" fill="#c9d1d9" font-size="16" font-family="Verdana">Top tools/platforms:</text>
+  <text x="210" y="130" fill="#3fb950" font-size="16" font-family="Verdana">Terraform · AWS</text>
+
+  <text x="30" y="160" fill="#8b949e" font-size="12" font-family="Verdana">Based on repo topics, names, descriptions, and language bytes</text>
 </svg>
