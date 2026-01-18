@@ -96,7 +96,7 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 ---
 
-## 📊 GitHub Activity & Stats (Always Works ✅)
+## 📊 GitHub Activity & Stats
 
 <!-- This SVG is generated inside this repo by a GitHub Action every day -->
 <p align="center">
