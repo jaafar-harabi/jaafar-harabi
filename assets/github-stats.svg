@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" role="img" aria-label="GitHub stats">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+  <rect width="860" height="160" rx="16" fill="url(#g)" stroke="#30363d"/>
+  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">GitHub Activity</text>
+
+  <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">Total contributions (365d):</text>
+  <text x="320" y="88" fill="#58a6ff" font-size="18" font-family="Verdana">6951</text>
+
+  <text x="30" y="120" fill="#c9d1d9" font-size="16" font-family="Verdana">Current streak:</text>
+  <text x="170" y="120" fill="#3fb950" font-size="18" font-family="Verdana">3 days</text>
+
+  <text x="360" y="120" fill="#c9d1d9" font-size="16" font-family="Verdana">Longest streak (365d):</text>
+  <text x="595" y="120" fill="#f78166" font-size="18" font-family="Verdana">55 days</text>
+
+  <text x="30" y="148" fill="#8b949e" font-size="12" font-family="Verdana">Updated: 2026-01-18 08:25 UTC</text>
+</svg>
