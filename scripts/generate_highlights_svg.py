@@ -1,34 +1,19 @@
 import os
 import requests
 
-# =========================
-# Config
-# =========================
 GH_TOKEN = os.environ.get("GH_TOKEN")
 GH_USER = os.environ.get("GH_USER", "jaafar-harabi")
 
 if not GH_TOKEN:
-    raise SystemExit("Missing GH_TOKEN environment variable")
+    raise SystemExit("Missing GH_TOKEN env var")
 
-# =========================
-# Helpers
-# =========================
 def xml_escape(s: str) -> str:
-    """Escape text for safe XML/SVG rendering."""
-    return (
-        s.replace("&", "&amp;")
-         .replace("<", "&lt;")
-         .replace(">", "&gt;")
-         .replace('"', "&quot;")
-         .replace("'", "&apos;")
-    )
+    return (s.replace("&", "&amp;")
+             .replace("<", "&lt;")
+             .replace(">", "&gt;")
+             .replace('"', "&quot;")
+             .replace("'", "&apos;"))
 
-def badge(label: str, ok: bool) -> str:
-    return f"[OK] {label}" if ok else f"[ ]  {label}"
-
-# =========================
-# GitHub API session
-# =========================
 session = requests.Session()
 session.headers.update({
     "Authorization": f"Bearer {GH_TOKEN}",
@@ -36,17 +21,11 @@ session.headers.update({
     "X-GitHub-Api-Version": "2022-11-28",
 })
 
-# =========================
-# Fetch repos
-# =========================
+# repos
 repos = []
 page = 1
 while True:
-    r = session.get(
-        f"https://api.github.com/users/{GH_USER}/repos",
-        params={"per_page": 100, "page": page},
-        timeout=30,
-    )
+    r = session.get(f"https://api.github.com/users/{GH_USER}/repos", params={"per_page": 100, "page": page}, timeout=30)
     r.raise_for_status()
     batch = r.json()
     if not batch:
@@ -54,77 +33,54 @@ while True:
     repos.extend(batch)
     page += 1
 
-stars = sum(int(r.get("stargazers_count", 0)) for r in repos)
-forks = sum(int(r.get("forks_count", 0)) for r in repos)
+stars = sum(int(x.get("stargazers_count", 0)) for x in repos)
+forks = sum(int(x.get("forks_count", 0)) for x in repos)
 
-# =========================
-# PRs and issues (search API)
-# =========================
+# merged PRs + issues opened
 pr_q = f"type:pr author:{GH_USER} is:merged"
 issue_q = f"type:issue author:{GH_USER}"
 
-pr_count = session.get(
-    "https://api.github.com/search/issues",
-    params={"q": pr_q},
-    timeout=30,
-).json().get("total_count", 0)
+pr_count = session.get("https://api.github.com/search/issues", params={"q": pr_q}, timeout=30).json().get("total_count", 0)
+issue_count = session.get("https://api.github.com/search/issues", params={"q": issue_q}, timeout=30).json().get("total_count", 0)
 
-issue_count = session.get(
-    "https://api.github.com/search/issues",
-    params={"q": issue_q},
-    timeout=30,
-).json().get("total_count", 0)
+def mark(ok: bool) -> str:
+    return "✅" if ok else "⬜"
 
-# =========================
-# Achievements logic
-# =========================
-highlights = [
-    badge("100+ stars earned across repositories", stars >= 100),
-    badge("25+ forks across repositories", forks >= 25),
-    badge("100+ merged pull requests", pr_count >= 100),
-    badge("100+ issues opened", issue_count >= 100),
+lines = [
+    f"{mark(stars >= 100)} ⭐ Stars earned: {stars}",
+    f"{mark(forks >= 25)} 🍴 Forks across repos: {forks}",
+    f"{mark(pr_count >= 100)} 🔀 Merged PRs: {pr_count}",
+    f"{mark(issue_count >= 100)} 🧩 Issues opened: {issue_count}",
 ]
 
-# Escape text
-lines = [xml_escape(h) for h in highlights]
+lines = [xml_escape(x) for x in lines]
 
-# =========================
-# SVG Output
-# =========================
-title = xml_escape("Achievements and Highlights")
+title = xml_escape("🏅 Highlights")
+subtitle = xml_escape("Milestones based on your public GitHub activity")
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="200" role="img" aria-label="GitHub achievements">
-  <rect width="860" height="200" rx="16" fill="#0d1117" stroke="#30363d"/>
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="210" role="img" aria-label="GitHub highlights">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
 
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">
-    {title}
-  </text>
+  <rect width="860" height="210" rx="18" fill="url(#bg3)" stroke="#30363d"/>
+  <text x="34" y="52" fill="#c9d1d9" font-size="24" font-family="Verdana">{title}</text>
+  <text x="34" y="78" fill="#8b949e" font-size="13" font-family="Verdana">{subtitle}</text>
 
-  <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">
-    {lines[0]}
-  </text>
+  <rect x="34" y="96" width="792" height="96" rx="14" fill="#0b0f14" stroke="#21262d"/>
 
-  <text x="30" y="116" fill="#c9d1d9" font-size="16" font-family="Verdana">
-    {lines[1]}
-  </text>
-
-  <text x="30" y="144" fill="#c9d1d9" font-size="16" font-family="Verdana">
-    {lines[2]}
-  </text>
-
-  <text x="30" y="172" fill="#c9d1d9" font-size="16" font-family="Verdana">
-    {lines[3]}
-  </text>
+  <text x="56" y="126" fill="#c9d1d9" font-size="16" font-family="Verdana">{lines[0]}</text>
+  <text x="56" y="150" fill="#c9d1d9" font-size="16" font-family="Verdana">{lines[1]}</text>
+  <text x="56" y="174" fill="#c9d1d9" font-size="16" font-family="Verdana">{lines[2]}</text>
+  <text x="56" y="198" fill="#c9d1d9" font-size="16" font-family="Verdana">{lines[3]}</text>
 </svg>
 """
 
-# =========================
-# Write file
-# =========================
 os.makedirs("assets", exist_ok=True)
-out_path = "assets/github-highlights.svg"
-
-with open(out_path, "w", encoding="utf-8") as f:
+with open("assets/github-highlights.svg", "w", encoding="utf-8") as f:
     f.write(svg)
 
-print(f"Wrote {out_path}")
+print("Wrote assets/github-highlights.svg")
