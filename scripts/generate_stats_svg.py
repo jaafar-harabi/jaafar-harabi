@@ -28,14 +28,12 @@ def gql(query: str, variables: dict):
         raise SystemExit(f"GraphQL errors: {j['errors']}")
     return j["data"]
 
-# 1) account creation date
-q_user = """
-query($login:String!) { user(login:$login) { createdAt } }
-"""
+# createdAt
+q_user = """query($login:String!) { user(login:$login) { createdAt } }"""
 created_at = gql(q_user, {"login": GH_USER})["user"]["createdAt"]
 created_dt = dt.datetime.fromisoformat(created_at.replace("Z", "+00:00"))
 
-# 2) all-time contributions computed year-by-year
+# all-time contributions computed per-year
 q_total = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
@@ -45,7 +43,6 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
   }
 }
 """
-
 now = dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc)
 
 total_all_time = 0
@@ -57,7 +54,6 @@ while True:
     if end <= created_dt:
         y += 1
         continue
-
     if start < created_dt:
         start = created_dt
     if start >= now:
@@ -75,22 +71,18 @@ while True:
         break
     y += 1
 
-# 3) streaks still based on last 365d (fast + reliable)
+# streaks based on last 365d (fast)
 q_calendar = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
     contributionsCollection(from:$from, to:$to) {
-      contributionCalendar {
-        weeks { contributionDays { date contributionCount } }
-      }
+      contributionCalendar { weeks { contributionDays { date contributionCount } } }
     }
   }
 }
 """
 from_365 = now - dt.timedelta(days=365)
-cal = gql(q_calendar, {"login": GH_USER, "from": from_365.isoformat(), "to": now.isoformat()})[
-    "user"
-]["contributionsCollection"]["contributionCalendar"]
+cal = gql(q_calendar, {"login": GH_USER, "from": from_365.isoformat(), "to": now.isoformat()})["user"]["contributionsCollection"]["contributionCalendar"]
 
 days = []
 for w in cal["weeks"]:
@@ -130,23 +122,36 @@ def longest_streak_365(days_list):
 cur = current_streak(days)
 longest = longest_streak_365(days)
 
-title = xml_escape("GitHub Activity")
 updated = xml_escape(dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"))
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="170" role="img" aria-label="GitHub activity">
-  <rect width="860" height="170" rx="16" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">{title}</text>
+# Design
+title = xml_escape("🚀 GitHub Activity")
+sub = xml_escape("All-time contributions with streak signals")
 
-  <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">Total contributions (all-time):</text>
-  <text x="340" y="88" fill="#58a6ff" font-size="18" font-family="Verdana">{total_all_time}</text>
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role="img" aria-label="GitHub activity">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
 
-  <text x="30" y="122" fill="#c9d1d9" font-size="16" font-family="Verdana">Current streak:</text>
-  <text x="170" y="122" fill="#3fb950" font-size="18" font-family="Verdana">{cur} days</text>
+  <rect width="860" height="190" rx="18" fill="url(#bg)" stroke="#30363d"/>
+  <text x="34" y="52" fill="#c9d1d9" font-size="24" font-family="Verdana">{title}</text>
+  <text x="34" y="78" fill="#8b949e" font-size="13" font-family="Verdana">{sub}</text>
 
-  <text x="360" y="122" fill="#c9d1d9" font-size="16" font-family="Verdana">Longest streak (365d):</text>
-  <text x="600" y="122" fill="#f78166" font-size="18" font-family="Verdana">{longest} days</text>
+  <rect x="34" y="96" width="792" height="68" rx="14" fill="#0b0f14" stroke="#21262d"/>
 
-  <text x="30" y="150" fill="#8b949e" font-size="12" font-family="Verdana">Updated: {updated}</text>
+  <text x="56" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">✨ Total (all-time)</text>
+  <text x="220" y="124" fill="#58a6ff" font-size="18" font-family="Verdana">{total_all_time}</text>
+
+  <text x="370" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🔥 Current streak</text>
+  <text x="530" y="124" fill="#3fb950" font-size="18" font-family="Verdana">{cur} days</text>
+
+  <text x="620" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest (365d)</text>
+  <text x="790" y="124" fill="#f78166" font-size="18" font-family="Verdana" text-anchor="end">{longest} days</text>
+
+  <text x="34" y="178" fill="#8b949e" font-size="12" font-family="Verdana">Updated: {updated}</text>
 </svg>
 """
 
