@@ -15,7 +15,6 @@ def xml_escape(s: str) -> str:
              .replace('"', "&quot;")
              .replace("'", "&apos;"))
 
-# -------- GraphQL helper --------
 def gql(query: str, variables: dict):
     r = requests.post(
         "https://api.github.com/graphql",
@@ -29,17 +28,15 @@ def gql(query: str, variables: dict):
         raise SystemExit(f"GraphQL errors: {j['errors']}")
     return j["data"]
 
-# 1) get account createdAt
+# 1) account creation date
 q_user = """
-query($login:String!) {
-  user(login:$login) { createdAt }
-}
+query($login:String!) { user(login:$login) { createdAt } }
 """
 created_at = gql(q_user, {"login": GH_USER})["user"]["createdAt"]
 created_dt = dt.datetime.fromisoformat(created_at.replace("Z", "+00:00"))
 
-# 2) all-time contributions computed year-by-year (safe + accurate)
-q_contrib = """
+# 2) all-time contributions computed year-by-year
+q_total = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
     contributionsCollection(from:$from, to:$to) {
@@ -52,13 +49,15 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 now = dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc)
 
 total_all_time = 0
-year = created_dt.year
+y = created_dt.year
 while True:
-    start = dt.datetime(year, 1, 1, tzinfo=dt.timezone.utc)
-    end = dt.datetime(year + 1, 1, 1, tzinfo=dt.timezone.utc)
+    start = dt.datetime(y, 1, 1, tzinfo=dt.timezone.utc)
+    end = dt.datetime(y + 1, 1, 1, tzinfo=dt.timezone.utc)
+
     if end <= created_dt:
-        year += 1
+        y += 1
         continue
+
     if start < created_dt:
         start = created_dt
     if start >= now:
@@ -66,7 +65,7 @@ while True:
     if end > now:
         end = now
 
-    total_all_time += gql(q_contrib, {
+    total_all_time += gql(q_total, {
         "login": GH_USER,
         "from": start.isoformat(),
         "to": end.isoformat(),
@@ -74,12 +73,9 @@ while True:
 
     if end >= now:
         break
-    year += 1
+    y += 1
 
-# 3) last 365 days for streak computations
-to_date = now
-from_date = now - dt.timedelta(days=365)
-
+# 3) streaks still based on last 365d (fast + reliable)
 q_calendar = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
@@ -91,11 +87,10 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
   }
 }
 """
-cal = gql(q_calendar, {
-    "login": GH_USER,
-    "from": from_date.isoformat(),
-    "to": to_date.isoformat(),
-})["user"]["contributionsCollection"]["contributionCalendar"]
+from_365 = now - dt.timedelta(days=365)
+cal = gql(q_calendar, {"login": GH_USER, "from": from_365.isoformat(), "to": now.isoformat()})[
+    "user"
+]["contributionsCollection"]["contributionCalendar"]
 
 days = []
 for w in cal["weeks"]:
@@ -103,24 +98,23 @@ for w in cal["weeks"]:
         days.append((d["date"], int(d["contributionCount"])))
 days.sort(key=lambda x: x[0])
 
-def compute_current_streak(days_list):
+def current_streak(days_list):
     m = {dt.date.fromisoformat(d): c for d, c in days_list}
     today = dt.date.today()
     start_day = today if m.get(today, 0) > 0 else (today - dt.timedelta(days=1))
     if m.get(start_day, 0) == 0:
         return 0
-    streak = 0
+    s = 0
     cur = start_day
     while m.get(cur, 0) > 0:
-        streak += 1
+        s += 1
         cur -= dt.timedelta(days=1)
-    return streak
+    return s
 
 def longest_streak_365(days_list):
     m = {dt.date.fromisoformat(d): c for d, c in days_list}
     all_dates = sorted(m.keys())
-    best = 0
-    run = 0
+    best = run = 0
     prev = None
     for day in all_dates:
         if prev and (day - prev).days != 1:
@@ -133,21 +127,21 @@ def longest_streak_365(days_list):
         prev = day
     return best
 
-current = compute_current_streak(days)
+cur = current_streak(days)
 longest = longest_streak_365(days)
 
-title = xml_escape("GitHub Activity (All-time)")
+title = xml_escape("GitHub Activity")
 updated = xml_escape(dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"))
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="170" role="img" aria-label="GitHub activity all-time">
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="170" role="img" aria-label="GitHub activity">
   <rect width="860" height="170" rx="16" fill="#0d1117" stroke="#30363d"/>
   <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">{title}</text>
 
   <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">Total contributions (all-time):</text>
-  <text x="330" y="88" fill="#58a6ff" font-size="18" font-family="Verdana">{total_all_time}</text>
+  <text x="340" y="88" fill="#58a6ff" font-size="18" font-family="Verdana">{total_all_time}</text>
 
   <text x="30" y="122" fill="#c9d1d9" font-size="16" font-family="Verdana">Current streak:</text>
-  <text x="170" y="122" fill="#3fb950" font-size="18" font-family="Verdana">{current} days</text>
+  <text x="170" y="122" fill="#3fb950" font-size="18" font-family="Verdana">{cur} days</text>
 
   <text x="360" y="122" fill="#c9d1d9" font-size="16" font-family="Verdana">Longest streak (365d):</text>
   <text x="600" y="122" fill="#f78166" font-size="18" font-family="Verdana">{longest} days</text>
