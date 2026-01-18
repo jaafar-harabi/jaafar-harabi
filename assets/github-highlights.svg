@@ -1,9 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role="img" aria-label="Highlights">
-  <rect width="860" height="190" rx="16" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">Achievements & Highlights</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="200" role="img" aria-label="GitHub achievements">
+  <rect width="860" height="200" rx="16" fill="#0d1117" stroke="#30363d"/>
 
-  <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">⬜ 100+ stars earned</text>
-  <text x="30" y="116" fill="#c9d1d9" font-size="16" font-family="Verdana">⬜ 25+ forks across repos</text>
-  <text x="30" y="144" fill="#c9d1d9" font-size="16" font-family="Verdana">⬜ 100+ PRs merged</text>
-  <text x="30" y="172" fill="#c9d1d9" font-size="16" font-family="Verdana">⬜ 100+ issues opened</text>
+  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">
+    Achievements and Highlights
+  </text>
+
+  <text x="30" y="88" fill="#c9d1d9" font-size="16" font-family="Verdana">
+    [ ]  100+ stars earned across repositories
+  </text>
+
+  <text x="30" y="116" fill="#c9d1d9" font-size="16" font-family="Verdana">
+    [ ]  25+ forks across repositories
+  </text>
+
+  <text x="30" y="144" fill="#c9d1d9" font-size="16" font-family="Verdana">
+    [ ]  100+ merged pull requests
+  </text>
+
+  <text x="30" y="172" fill="#c9d1d9" font-size="16" font-family="Verdana">
+    [ ]  100+ issues opened
+  </text>
 </svg>

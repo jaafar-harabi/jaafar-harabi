@@ -2,7 +2,7 @@
   <rect width="860" height="160" rx="16" fill="#0d1117" stroke="#30363d"/>
   <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">Top Technologies</text>
 
-  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Java 19% · Astro 18% · PHP 13% · JavaScript 12% · Python 10% · TypeScript 7%</text>
+  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Java 19% · Astro 18% · PHP 13% · JavaScript 12% · Python 11% · TypeScript 6%</text>
 
   <text x="30" y="132" fill="#8b949e" font-size="12" font-family="Verdana">Based on language bytes across non-fork repos</text>
 </svg>
