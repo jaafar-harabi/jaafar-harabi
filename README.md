@@ -100,7 +100,7 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 <!-- This SVG is generated inside this repo by a GitHub Action every day -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/main/assets/github-stats.svg" alt="GitHub Stats (self-hosted)" />
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-stats.svg" alt="GitHub Stats" />
 </p>
 
 ---
