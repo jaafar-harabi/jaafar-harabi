@@ -104,10 +104,6 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-impact-alltime.svg" alt="All-time Impact" />
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-tech.svg" alt="Top Technologies" />
 </p>
 
