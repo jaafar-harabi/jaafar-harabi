@@ -148,7 +148,7 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="860" height="190" role=
   <text x="370" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🔥 Current streak</text>
   <text x="530" y="124" fill="#3fb950" font-size="18" font-family="Verdana">{cur} days</text>
 
-  <text x="620" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest (365d)</text>
+  <text x="620" y="124" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest streak</text>
   <text x="790" y="124" fill="#f78166" font-size="18" font-family="Verdana" text-anchor="end">{longest} days</text>
 
   <text x="34" y="178" fill="#8b949e" font-size="12" font-family="Verdana">Updated: {updated}</text>
