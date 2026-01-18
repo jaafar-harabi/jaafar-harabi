@@ -112,7 +112,7 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-highlights.svg" alt="Achievements & Highlights" />
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-highlights.svg" />
 </p>
 
 ---
