@@ -96,10 +96,11 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 ---
 
-## 📊 GitHub Activity & Stats
+## 📊 GitHub Activity & Stats (Always Works ✅)
 
+<!-- This SVG is generated inside this repo by a GitHub Action every day -->
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=jaafar-harabi&theme=github-dark&hide_border=true" />
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/main/assets/github-stats.svg" alt="GitHub Stats (self-hosted)" />
 </p>
 
 ---
