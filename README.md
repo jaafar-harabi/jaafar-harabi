@@ -100,7 +100,19 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 <!-- This SVG is generated inside this repo by a GitHub Action every day -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-stats.svg" alt="GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-stats.svg" alt="GitHub Activity (self-hosted)" />
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-impact-alltime.svg" alt="All-time Impact (self-hosted)" />
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-tech.svg" alt="Top Technologies (self-hosted)" />
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-highlights.svg" alt="Achievements & Highlights (self-hosted)" />
 </p>
 
 ---
