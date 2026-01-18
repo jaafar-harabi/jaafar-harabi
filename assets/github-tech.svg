@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="180" role="img" aria-label="Cloud DevOps tech stack">
-  <rect width="860" height="180" rx="16" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">Cloud and DevOps Tech Stack</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="185" role="img" aria-label="DevOps and Cloud tech stack">
+  <rect width="860" height="185" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="30" y="48" fill="#c9d1d9" font-size="22" font-family="Verdana">DevOps and Cloud Technology Focus</text>
 
-  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Top languages:</text>
-  <text x="170" y="92" fill="#58a6ff" font-size="16" font-family="Verdana">Java · Astro · PHP</text>
+  <text x="30" y="92" fill="#c9d1d9" font-size="16" font-family="Verdana">Primary tools:</text>
+  <text x="160" y="92" fill="#3fb950" font-size="16" font-family="Verdana">Terraform · AWS</text>
 
-  <text x="30" y="130" fill="#c9d1d9" font-size="16" font-family="Verdana">Top tools/platforms:</text>
-  <text x="210" y="130" fill="#3fb950" font-size="16" font-family="Verdana">Terraform · AWS</text>
-
-  <text x="30" y="160" fill="#8b949e" font-size="12" font-family="Verdana">Based on repo topics, names, descriptions, and language bytes</text>
+  <text x="30" y="165" fill="#8b949e" font-size="12" font-family="Verdana">Derived from repository topics, names, and descriptions</text>
 </svg>
