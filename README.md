@@ -86,6 +86,7 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 ## 🥇 Certifications
 
+- Certified Kubernetes Administrator (CKA)
 - AWS Certified Solutions Architect – Associate  
 - Oracle Cloud Infrastructure DevOps Professional  
 - ISO/IEC 27001:2022 Lead Auditor  
