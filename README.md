@@ -3,10 +3,12 @@
 </p>
 
 <h1 align="center">Jaafar Harabi</h1>
-<h3 align="center">DevOps Engineer | Cloud Engineer | Platform Engineer | SRE</h3>
+<h3 align="center">
+Cloud-Native Platform Engineer | CKA | AWS SAA-C03 | Kubernetes • Terraform • DevSecOps • SRE
+</h3>
 
 <p align="center">
-  Designing <strong>secure, automated, scalable, and reliable</strong> cloud-native platforms.
+  Building <strong>secure, automated, scalable, and production-grade cloud-native platforms</strong>.
 </p>
 
 <p align="center">
@@ -25,81 +27,76 @@
 
 ## 👋 About Me
 
-DevOps / Cloud / Platform Engineer with **2+ years of production experience** designing and operating **cloud-native and hybrid infrastructures** using **AWS, Kubernetes, Terraform, and GitOps**.
+Cloud & DevOps Engineer with **3+ years of production experience** designing and operating **cloud-native and hybrid infrastructures**.
 
-I focus on:
-- Infrastructure as Code & GitOps
+🎯 **Certified Kubernetes Administrator (CKA)**  
+🎯 **AWS Certified Solutions Architect – Associate (SAA-C03)**  
+
+I specialize in:
+
+- Kubernetes operations (EKS + on-prem)
+- Infrastructure as Code (Terraform)
+- GitOps workflows (ArgoCD)
 - CI/CD & DevSecOps automation
-- Kubernetes operations & reliability
-- Observability, monitoring, and cost optimization
-- Platform & Site Reliability Engineering practices
+- Observability & SRE practices
+- Cloud cost optimization
 
-Currently working as **Cloud & DevOps Engineer @ Day Truck**, managing **mission-critical Kubernetes workloads** across **AWS and on-prem environments**.
+Currently working as **Cloud & DevOps Engineer @ Day Truck**, managing **mission-critical Kubernetes workloads** across AWS and on-prem environments.
 
 ---
 
-## 🧠 Core Skills (ATS & SEO Optimized)
+## 🧠 Core Technical Stack
 
-**Cloud Platforms**  
-AWS (EC2, VPC, EKS, IAM, S3, ECR, CloudWatch), Azure, GCP
+### ☁️ Cloud
+AWS (EKS, EC2, VPC, IAM, S3, ECR, CloudWatch), Azure, GCP
 
-**Containers & Orchestration**  
-Docker, Kubernetes, Helm, ArgoCD
+### 🚢 Containers & Orchestration
+Kubernetes (CKA Certified), Docker, Helm, ArgoCD
 
-**Infrastructure as Code**  
+### 🏗 Infrastructure as Code
 Terraform, Ansible
 
-**CI/CD & DevSecOps**  
+### 🔄 CI/CD & DevSecOps
 GitHub Actions, Jenkins, GitLab CI/CD  
-SonarQube (SAST), Trivy (SCA), OWASP ZAP (DAST)
+SonarQube (SAST) • Trivy (SCA) • OWASP ZAP (DAST)
 
-**Security & Secrets**  
+### 🔐 Security & Secrets
 HashiCorp Vault, AWS Secrets Manager, IAM
 
-**Observability & Reliability**  
+### 📊 Observability & SRE
 Prometheus, Grafana, ELK Stack, CloudWatch
 
 ---
 
-## ⚙️ Engineering Principles
+## 🏗️ Featured Projects
 
-- Infrastructure as Code — reproducible and auditable
-- GitOps — declarative deployments with ArgoCD
-- Shift-Left Security — security embedded in CI/CD
-- Reliability-First Design — monitoring, alerting, failure handling
-- Cost Optimization — right-sizing and autoscaling
+### 🔹 aws-terraform-infra-blueprint
+Production-ready AWS infrastructure blueprint  
+(VPC, EKS, RDS, S3, IAM) with CI/CD automation.
 
----
+### 🔹 secure-task-api-devsecops
+Secure Node.js / TypeScript API with Docker, PostgreSQL, and DevSecOps pipeline.
 
-## 🏗️ Key Projects
-
-- **aws-terraform-infra-blueprint**  
-  AWS infrastructure blueprint (VPC, EKS, RDS, S3, IAM) with CI/CD automation
-
-- **secure-task-api-devsecops**  
-  Secure Node.js / TypeScript API with Docker, PostgreSQL, and DevSecOps pipeline
-
-- **springboot-react-microservices-devsecops-demo**  
-  Kubernetes-based microservices with CI/CD, security scanning, and observability
+### 🔹 springboot-react-microservices-devsecops-demo
+Kubernetes-based microservices with CI/CD, security scanning, and observability stack.
 
 ---
 
-## 🥇 Certifications
+## 🏆 Certifications
 
 - Certified Kubernetes Administrator (CKA)
-- AWS Certified Solutions Architect – Associate  
-- Oracle Cloud Infrastructure DevOps Professional  
-- ISO/IEC 27001:2022 Lead Auditor  
-- Microsoft Azure Fundamentals (AZ-900)  
-- Meta Full-Stack Engineer  
-- Google Cybersecurity  
-- GitHub Foundations  
+- AWS Certified Solutions Architect – Associate (SAA-C03)
+- Oracle Cloud Infrastructure DevOps Professional
+- ISO/IEC 27001:2022 Lead Auditor
+- Microsoft Azure Fundamentals (AZ-900)
+- GitHub Foundations
+- Google Cybersecurity
+- Meta Full-Stack Engineer
 
 ---
 
-## 📊 GitHub Activity & Stats
+## 📊 GitHub Activity
 
-<!-- This SVG is generated inside this repo by a GitHub Action every day -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/jaafar-harabi/jaafar-harabi/master/assets/github-stats.svg" />
 </p>
@@ -114,13 +111,14 @@ Prometheus, Grafana, ELK Stack, CloudWatch
 
 ## 🤝 Open to Opportunities
 
-- DevOps Engineering  
-- Cloud Engineering  
-- Platform Engineering  
-- Site Reliability Engineering (SRE)  
-- Cloud-Native & DevSecOps Platforms  
+- Platform Engineering
+- Kubernetes Engineering
+- Cloud Engineering
+- Site Reliability Engineering (SRE)
+- DevSecOps & Cloud-Native Platforms
 
 ---
 
 ### 🚀 Philosophy
-> **Automation enables scale. Reliability builds trust. Security protects everything.**
+
+> Automation enables scale. Reliability builds trust. Security protects everything.
