@@ -17,15 +17,15 @@
 
   <!-- Total -->
   <text x="54" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">✨ Total (all-time)</text>
-  <text x="54" y="152" fill="#58a6ff" font-size="22" font-family="Verdana">10396</text>
+  <text x="54" y="152" fill="#58a6ff" font-size="22" font-family="Verdana">10502</text>
 
   <!-- Current streak -->
   <text x="325" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">🔥 Current streak</text>
-  <text x="325" y="152" fill="#3fb950" font-size="22" font-family="Verdana">0 days</text>
+  <text x="325" y="152" fill="#3fb950" font-size="22" font-family="Verdana">4 days</text>
 
   <!-- Longest -->
   <text x="596" y="122" fill="#c9d1d9" font-size="15" font-family="Verdana">🏆 Longest streak</text>
   <text x="596" y="152" fill="#f78166" font-size="22" font-family="Verdana">55 days</text>
 
-  <text x="34" y="198" fill="#8b949e" font-size="12" font-family="Verdana">Updated: 2026-02-25 04:27 UTC</text>
+  <text x="34" y="198" fill="#8b949e" font-size="12" font-family="Verdana">Updated: 2026-02-25 12:16 UTC</text>
 </svg>
