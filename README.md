@@ -41,7 +41,7 @@ I specialize in:
 - Observability & SRE practices
 - Cloud cost optimization
 
-Currently working as **Cloud & DevOps Engineer @ Day Truck**, managing **mission-critical Kubernetes workloads** across AWS and on-prem environments.
+Currently working as **Cloud & DevOps Engineer @ Enquire AI**, managing **mission-critical Kubernetes workloads** across AWS and on-prem environments.
 
 ---
 
